@@ -61,4 +61,5 @@ Press CTRL+C to quit
 Now open your browser and type in address to the local server http://127.0.0.1:5000. your server address maybe different. The standard for Flask is http://127.0.0.1:5000
 
 This is what you should see:
+
 ![Picture of the homepage of the API](/static/readme/home.png)
