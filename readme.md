@@ -1,37 +1,60 @@
-Set-up to run this app
+# Toby's API
 
-Steps:
-    1. From the command prompt run python -V If you get a version back you can skip
-       to step 3
+This is my first attempt at a true API. This use Python back-end with Flask-Marshmallow, Flask-SQLAlchemy and swagger.
 
-    2. If you got a message that python was not found. Go to http://www.python.org and 
-       download the lastest version of Python. Follow the install instructions on the site. Make sure to click the Add to PATH when asked.
+## Installation
 
-    3. Clone the repo
+From the command prompt run.
+```bash
+python -V
+```
+An example of what you will see if you have Python installed already. Need at least Python 3.0 installed.
+```bash
+Python 3.11.3
+```
+If you need to install Python you can go to [www.python.org](http://www.python.org) and install the latest version. Make sure to click the Add to PATH when asked.
 
-    4. Open the repo in your IDE. The IDE that I used was Visual Studio Code
+Clone the repo.
 
-    5. Open a terminal to the command prompt and make sure you are in the root folder
-       for the project when you do
+Open the repo in your IDE. The IDE that I used was Visual Studio Code.
 
-    6. Now we need to set-up the virtual environment. At the command prompt run 
-       pip install virtualenv
+Open a terminal to the command prompt and make sure you are in the root folder for the project.
 
-    7. Then run py -m venv venv (the second venv can be whatever you want to name the 
-       virtual environment)
+Now we need to set-up the virtual environment using the following three commands. 
+```bash
+C:\(path to the root folder of the project)>pip install virtualenv
 
-    8. To activate the virtual environment at the command prompt run 
-       .\venv\Scripts\activate  (replace the venv with the name you gave the virtual environment) 
-       Once the virtual environment is active you will see the name of your virtual environment 
-       in front of the command prompt.
+C:\(path to the root folder of the project)>py -m venv env
 
-    9. Now that the virtual environment is active we need to install the required
-       packages for this app. Now run pip -r requirements.txt
+C:\(path to the root folder of the project)>.\env\Scripts\activate
+```
 
-    10. After all the packages install you can run py app.py  This will start the app on the local server.
-        Type the address of the local server in the browser. Will see a messages welcoming you to the 
-        The API.
+If the virtual environment was set-up correctly who should see the following:
+```bash
+(env) C:\(path to the root folder of the project)>
+``` 
+Now if we need to install the required packages. I have included all the required packages in the requirements.txt file. We will use this file to install the packages at one time.
+```bash
+(env) C:\(path to the root folder of the project)>pip install -r requirements.txt
+``` 
+After all the packages install you can run start the app on the local server with the following command
+```bash
+(env) C:\(path to the root folder of the project)>py app.py
+``` 
+After the server starts you will see the following:
+```bash
+(env) C:\(path to the root folder of the project)>py app.py
+ * Serving Flask app 'config'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.28.137.26:5000
+Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 103-794-599
+```
+Now open your browser and type in address to the local server [http://127.0.0.1:5000](http://127.0.0.1:5000). your server address maybe different. The standard for Flask is Http://127.0.0.1:5000
 
-    11. Now in the address bar add /ui to the end of the URL. This will allow you to access the user 
-        interface for the API allowing you to run all CRUD operations on the API
-
+This is what you should see:
