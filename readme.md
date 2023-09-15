@@ -67,3 +67,5 @@ This is what you should see:
 To get to the User Interface to run CRUD commands to the API you add /ui to the local address. http://127.0.0.1/ui and you should see this page.
 
 ![Picture of the User Interface of the API](/static/readme/ui.png)
+
+From here you can run the CRUD commands, or you can access the API with Thunder Client or Postman using the local server host address.
