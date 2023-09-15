@@ -1,0 +1,98 @@
+openapi: 3.0.0
+info:
+  title: "Toby Cantello's Flask REST API"
+  description: "An API about code snippets from different programming languages"
+  version: "1.0.0"
+
+servers:
+  - url: "/"
+
+components:
+  schemas:
+    Snippet:
+      type: "object"
+      required:
+        - id
+      properties:
+        id:
+          type: "integer"
+        language:
+          type: "string"
+        code:
+          type: "string"
+  parameters:
+    id:
+      name: "id"
+      description: "Id of the snippet to get"
+      in: path
+      required: True
+      schema:
+        type: "integer"
+
+paths:
+  /snippet:
+    get:
+      operationId: "snippet.read_all"
+      tags:
+        - "Snippet"
+      summary: "Read the list of existing code snippets"
+      responses:
+        "200":
+          description: "Successfully read existing code snippets people list"
+
+    post:
+      operationId: "snippet.create"
+      tags:
+        - Snippet
+      summary: "Create a snippet"
+      requestBody:
+          description: "Snippet to create"
+          required: True
+          content:
+            application/json:
+              schema:
+                x-body-name: "snippet"
+                $ref: "#/components/schemas/Snippet"
+      responses:
+        "201":
+          description: "Successfully created a snippet"
+
+  /snippet/{id}:
+    get:
+      operationId: "snippet.read_one"
+      tags:
+        - Snippet
+      summary: "Read one snippet"
+      parameters:
+        - $ref: "#/components/parameters/id"
+      responses:
+        "200":
+          description: "Successfully read snippet"
+
+    put:
+      tags:
+        - Snippet
+      operationId: "snippet.update"
+      summary: "Update a snippet"
+      parameters:
+        - $ref: "#/components/parameters/id"
+      responses:
+        "200":
+          description: "Successfully updated a snippet"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              x-body-name: "snippet"
+              $ref: "#/components/schemas/Snippet"
+
+    delete:
+      tags:
+        - Snippet
+      operationId: "snippet.delete"
+      summary: "Delete a snippet"
+      parameters:
+        - $ref: "#/components/parameters/id"
+      responses:
+        "204":
+          description: "Successfully deleted a snippet"
