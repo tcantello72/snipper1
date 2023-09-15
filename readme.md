@@ -63,3 +63,7 @@ Now open your browser and type in address to the local server http://127.0.0.1:5
 This is what you should see:
 
 ![Picture of the homepage of the API](/static/readme/home.png)
+
+To get to the User Interface to run CRUD commands to the API you add /ui to the local address. http://127.0.0.1/ui and you should see this page.
+
+![Picture of the User Interface of the API](/static/readme/ui.png)
